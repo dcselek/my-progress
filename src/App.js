@@ -1,24 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes, // react-router-dom da bu fonksiyonun adı Switch'di fakat v6 ile beraber Routes oldu.
+  Route,
+  Link,
+} from 'react-router-dom'
+import Users from './components/Users';
+
+const Home = () => <h1>Home</h1>
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <div className="App">
+        <h1>👁 Open your eyes, open your mind 👁</h1>
+
+        <div>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="Users">Users</Link>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* v6 ile beraber exact kullanmamıza gerek kalmıyor en azından Home Page de.*/}
+        <Route path="/Users" element={<Users />} />
+      </Routes>
+
+    </Router>
   );
 }
 
