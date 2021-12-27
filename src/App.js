@@ -31,7 +31,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} /> {/* v6 ile beraber exact kullanmamıza gerek kalmıyor en azından Home Page de.*/}
-        <Route path="/Users" element={<Users />} />
+        <Route path="users" element={<Users />} />
       </Routes>
 
     </Router>
