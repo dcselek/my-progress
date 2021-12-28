@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Users() {
     const [users, setUsers] = useState([])
+    let navigate = useNavigate() //useNavigate denemesi
 
     useEffect(() => {
         axios("https://jsonplaceholder.typicode.com/users")
@@ -15,7 +16,7 @@ function Users() {
                 {
                     users.map((user) => (
                         <li key={user.id}>
-                            <Link to={`/:${user.id}`}>{user.name}</Link>
+                            <button onClick={() => navigate(`/user/${user.id}`)}>{user.name}</button>
                         </li>
                     ))
                 }
