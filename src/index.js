@@ -13,6 +13,7 @@ ReactDOM.render(
       <Route path="/" element={<App />} > {/* v6 ile beraber exact kullanmamıza gerek kalmıyor en azından Home Page de. Ayrıca diğer routelar ile bağlantılı olmasını istiyorsak onları sarıyoruz.*/}
         <Route path="users" element={<Users />} />
         <Route path="/user/:id" element={<User />} /> {/* eğer farklı bir url olmasını istiyorsak path başına  / koyuyoruz. koymazsak users/user/:id olur */}
+        <Route path="*" element={<h1>Sayfa Yok :((</h1>} />
       </Route>
     </Routes>
   </BrowserRouter>,

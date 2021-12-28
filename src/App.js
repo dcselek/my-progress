@@ -1,6 +1,6 @@
 import './App.css';
 import {
-  Link, Outlet,
+  Link, Outlet, NavLink
 } from 'react-router-dom'
 
 function App() {
@@ -14,7 +14,18 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="Users">Users</Link>
+            <NavLink
+              style={({ isActive }) => {
+                return {
+                  display: 'block',
+                  fontSize: isActive ? 32 : 16,
+                  color: isActive ? "red" : ""
+                }
+              }}
+              to="Users"
+            >
+              Users
+            </NavLink> {/* NavLink denemesi */}
           </li>
         </ul>
       </div>
