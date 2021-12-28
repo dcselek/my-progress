@@ -9,25 +9,22 @@ function App() {
       <h1>👁 Open your eyes, open your mind 👁</h1>
 
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <NavLink
-              style={({ isActive }) => {
-                return {
-                  display: 'block',
-                  fontSize: isActive ? 32 : 16,
-                  color: isActive ? "red" : ""
-                }
-              }}
-              to="Users"
-            >
-              Users
-            </NavLink> {/* NavLink denemesi */}
-          </li>
-        </ul>
+        <nav style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <Link to="/">Home</Link>
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                display: 'block',
+                fontSize: isActive ? 32 : 16,
+                color: isActive ? "red" : ""
+              }
+            }}
+            to="users"
+          >
+            Users
+          </NavLink> {/* NavLink denemesi */}
+          <Link to="formik">Formik</Link>
+        </nav>
       </div>
       <Outlet /> {/* Diğer sayfaları app altında göstermek adına Outlet kullanıyoruz */}
     </div>
