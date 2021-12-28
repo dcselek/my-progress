@@ -6,7 +6,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <h1>👁 Open your eyes, open your mind 👁</h1>
+      <h1>👁 dcselek's progress 👁</h1>
 
       <div>
         <nav style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
