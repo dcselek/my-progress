@@ -1,31 +1,47 @@
 import React from 'react'
 import { useFormik } from 'formik'
+import validationSchema from './validations';
 
 function FormikPage() {
-    const formik = useFormik({
+    const { handleSubmit, handleChange, values, errors, touched, handleBlur } = useFormik({
         initialValues: {
-            userName: "dcselek",
-            password: "asdasd",
+            email: "",
+            password: "",
+            passwordConfirm: "",
             gender: "male",
             country: "turkey",
         },
         onSubmit: (values) => {
-            alert(JSON.stringify(values));
-        }
+            console.log(values)
+        },
+        validationSchema,
     })
     return (
         <div>
             <h1>form</h1>
-            <form onSubmit={formik.handleSubmit}>
-                <label htmlFor='userName'>Username: </label>
-                <input name='userName' value={formik.values.userName} onChange={formik.handleChange} />
+            <form onSubmit={handleSubmit}>
+                <label>Email: </label>
+                <input name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} />
+                <br />
+                <span id='errorSpan'>{touched.email && errors.email}</span>
+                <br />
                 <br />
 
-                <label htmlFor='password'>Password: </label>
-                <input type="password" name='password' value={formik.values.password} onChange={formik.handleChange} />
+                <label>Password: </label>
+                <input type="password" name='password' value={values.password} onChange={handleChange} onBlur={handleBlur} />
+                <br />
+                <span id='errorSpan'>{touched.password && errors.password}</span> {/* touched inputa tıklayıp başka bir inputa focus olduğumuzda çalışır. bilgiyi almak için handleBlur kullanıyoruz */}
+                <br />
                 <br />
 
-                <label htmlFor='gender'>Gender: </label>
+                <label>Password Confirm: </label>
+                <input type="password" name='passwordConfirm' value={values.passwordConfirm} onChange={handleChange} onBlur={handleBlur} />
+                <br />
+                <span id='errorSpan'>{touched.passwordConfirm && errors.passwordConfirm}</span>
+                <br />
+                <br />
+
+                {/* <label htmlFor='gender'>Gender: </label>
                 <span>Male: </span>
                 <input type="radio" name='gender' value="male" onChange={formik.handleChange} />
                 <span>Female: </span>
@@ -37,7 +53,7 @@ function FormikPage() {
                     <option value="england">England</option>
                     <option value="russia">Russia</option>
                 </select>
-                <br />
+                <br /> */}
 
                 <button type='submit'>Submit</button>
             </form>
