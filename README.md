@@ -9,5 +9,9 @@
 * Form Techs
     * Formik
     * yup
+* Memoization
+    * React.memo
+    * useMemo
+    * useCallback
 
 ✨`strikethrough means that tech not use to this project but I'm learned.`✨

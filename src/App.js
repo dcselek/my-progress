@@ -1,30 +1,32 @@
 import './App.css';
 import {
-  Link, Outlet, NavLink
+  Outlet
 } from 'react-router-dom'
+import { useState } from 'react/cjs/react.development';
+import { useCallback, useMemo } from 'react';
+import Header from './components/header';
 
 function App() {
+  const [number, setNumber] = useState(0)
+
+  // const data = ["dcselek"]
+  const data = useMemo(() => {
+    return { user: "dcselek" }
+  }, []) //useMemo kullandığımız için header sürekli render olmuyor
+
+  const decrement = useCallback(() => {
+    setNumber((prevState) => prevState - 1)
+  }, [])
   return (
     <div className="App">
       <h1>👁 dcselek's progress 👁</h1>
 
       <div>
-        <nav style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Link to="/">Home</Link>
-          <NavLink
-            style={({ isActive }) => {
-              return {
-                display: 'block',
-                fontSize: isActive ? 32 : 16,
-                color: isActive ? "red" : ""
-              }
-            }}
-            to="users"
-          >
-            Users
-          </NavLink> {/* NavLink denemesi */}
-          <Link to="formik">Formik</Link>
-        </nav>
+        <Header data={data} decrement={decrement} />
+        <span>{number}</span>
+        <br />
+        <button onClick={() => setNumber(number + 1)}>+</button>
+        <br />
       </div>
       <Outlet /> {/* Diğer sayfaları app altında göstermek adına Outlet kullanıyoruz */}
     </div>
