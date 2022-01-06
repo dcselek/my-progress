@@ -2,18 +2,18 @@ import React, { useState } from 'react'
 
 const UserContext = React.createContext()
 
-function User() {
+function RegisterUser() {
     const [user, setUser] = useState([])
-    return (
+    return {
         setUser,
-        user
-    )
+        user,
+    }
 }
 
-export function UserProvider({children}) {
-    const user = User();
+export function UserProvider({ children }) {
+    const user = RegisterUser();
 
-    return(
+    return (
         <UserContext.Provider value={user}>
             {children}
         </UserContext.Provider>
