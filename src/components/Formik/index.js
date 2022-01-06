@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFormik } from 'formik'
 import validationSchema from './validations';
+import RegisterUser from '../../context/UserContext'
 
 function FormikPage() {
     const { handleSubmit, handleChange, values, errors, touched, handleBlur } = useFormik({
@@ -16,10 +17,12 @@ function FormikPage() {
         },
         validationSchema,
     })
+
+    const { setUser } = RegisterUser();
     return (
         <div>
             <h1>form</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => { handleSubmit(); setUser(values); e.preventDefault(); }}>
                 <label>Email: </label>
                 <input name='email' value={values.email} onChange={handleChange} onBlur={handleBlur} />
                 <br />

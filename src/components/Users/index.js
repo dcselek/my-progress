@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import RegisterUser from '../../context/UserContext'
 
 function Users() {
     const [users, setUsers] = useState([])
     let navigate = useNavigate() //useNavigate denemesi
+    const { user } = RegisterUser();
 
     useEffect(() => {
         axios("https://jsonplaceholder.typicode.com/users")
@@ -21,6 +23,8 @@ function Users() {
                     ))
                 }
             </ul>
+
+            <code>{JSON.stringify(user)}</code>
         </div>
     )
 }
