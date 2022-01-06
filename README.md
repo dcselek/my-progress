@@ -13,5 +13,7 @@
     * React.memo
     * useMemo
     * useCallback
+* State Management
+    * Context API
 
 ✨`strikethrough means that tech not use to this project but I'm learned.`✨
