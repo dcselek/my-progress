@@ -5,7 +5,7 @@
     * Axios
     * ~~Native Fetching~~
 * Routing 
-    * react-router-dom **V6** link: https://reactrouter.com/docs/en/v6/getting-started/tutorial
+    * [react-router-dom **V6**](https://reactrouter.com/docs/en/v6/getting-started/tutorial)
 * Form Techs
     * Formik
     * yup
@@ -15,5 +15,8 @@
     * useCallback
 * State Management
     * Context API
+* Realtime Apps with SocketApi & Redis
+    * [Realtime Color Selector App](https://github.com/dcselek/test-realtime-colors)
+    * [Realtime Chat App](https://github.com/dcselek/react-realtime-chat)
 
 ✨`strikethrough means that tech not use to this project but I'm learned.`✨
