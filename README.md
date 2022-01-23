@@ -18,5 +18,7 @@
 * Realtime Apps with SocketApi & Redis
     * [Realtime Color Selector App](https://github.com/dcselek/test-realtime-colors)
     * [Realtime Chat App](https://github.com/dcselek/react-realtime-chat)
+* Localization
+    * react-intl
 
 ✨`strikethrough means that tech not use to this project but I'm learned.`✨
