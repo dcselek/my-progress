@@ -8,12 +8,14 @@ import Users from './components/Users';
 import User from './components/User';
 import FormikPage from './components/Formik';
 import { UserProvider } from './context/UserContext'
+import Home from './components/Home';
 
 ReactDOM.render(
   <UserProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} > {/* v6 ile beraber exact kullanmamıza gerek kalmıyor en azından Home Page de. Ayrıca diğer routelar ile bağlantılı olmasını istiyorsak onları sarıyoruz.*/}
+          <Route index element={<Home />} />
           <Route path="users" element={<Users />} />
           <Route path="/user/:id" element={<User />} /> {/* eğer farklı bir url olmasını istiyorsak path başına  / koyuyoruz. koymazsak users/user/:id olur */}
           <Route path="formik" element={<FormikPage />} />
