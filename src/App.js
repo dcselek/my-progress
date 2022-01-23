@@ -23,10 +23,10 @@ function App() {
 
       <div>
         <Header data={data} decrement={decrement} />
-        <span>{number}</span>
+        {/* <span>{number}</span>
         <br />
         <button onClick={() => setNumber(number + 1)}>+</button>
-        <br />
+        <br /> */}
       </div>
       <Outlet /> {/* Diğer sayfaları app altında göstermek adına Outlet kullanıyoruz */}
     </div>

@@ -23,7 +23,7 @@ function Header({data,decrement}) {
             </nav>
             <span>{data.user}</span>
             <br />
-            <button onClick={decrement}>-</button>
+            {/* <button onClick={decrement}>-</button> */}
         </div>
     )
 }
